@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="board">
 
+    <div class="board">
       <div class="column" id="todo">
-        <h2>TO DO</h2>
+        <h2>TO DO: <span id="todo-count">0</span></h2>
         <div class="tasks" id="todo-tasks"></div>
         <input
           class="task-input"
@@ -18,11 +18,11 @@
           type="text"
           placeholder="Enter your tasks..."
         />
-        <button class="add-task">Add Task</button>
+        <button onclick="addTask('todo')" class="add-task">Add Task</button>
       </div>
 
       <div class="column" id="doing">
-        <h2>DOING</h2>
+        <h2>DOING: <span id="doing-count">0</span></h2>
         <div class="tasks" id="doing-tasks"></div>
         <input
           class="task-input"
@@ -30,11 +30,11 @@
           type="text"
           placeholder="Enter your tasks..."
         />
-        <button class="add-task">Add Task</button>
+        <button onclick="addTask('doing')" class="add-task">Add Task</button>
       </div>
 
       <div class="column" id="done">
-        <h2>DONE</h2>
+        <h2>DONE: <span id="done-count">0</span></h2>
         <div class="tasks" id="done-tasks"></div>
         <input
           class="task-input"
@@ -42,9 +42,17 @@
           type="text"
           placeholder="Enter your tasks..."
         />
-        <button class="add-task">Add Task</button>
+        <button onclick="addTask('done')" class="add-task">Add Task</button>
       </div>
-
     </div>
+
+    <div class="update-menu">
+        <ul>
+            <li onclick="editTask()">Edit</li>
+            <li onclick="deleteTask()">Delete</li>
+        </ul>
+    </div>
+
+    <script src="./app.js"></script>
   </body>
 </html>
